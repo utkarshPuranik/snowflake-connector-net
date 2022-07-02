@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp2.2;net472</TargetFrameworks>
-    <TargetFrameworks Condition="'$(OS)' != 'Windows_NT'">netcoreapp2.2</TargetFrameworks>
-    <RuntimeFrameworkVersion>2.2.8</RuntimeFrameworkVersion>
+	  <TargetFrameworks>net5.0;net472</TargetFrameworks>
+	<!--<TargetFrameworks Condition="'$(OS)' != 'Windows_NT'">net5.0</TargetFrameworks>-->
+	<!--<RuntimeFrameworkVersion>2.2.8</RuntimeFrameworkVersion>-->
     <Title>Snowflake.Data.Tests</Title>
     <Description>Snowflake Connector for .NET</Description>
     <Company>Snowflake Computing, Inc</Company>
@@ -24,7 +24,7 @@
     <ProjectReference Include="..\Snowflake.Data\Snowflake.Data.csproj" />
   </ItemGroup>
   <Target Name="CopyCustomContent" AfterTargets="AfterBuild">
-    <Copy SourceFiles="parameters.json" DestinationFolder="$(OutDir)" />
+    <!--<Copy SourceFiles="parameters.json" DestinationFolder="$(OutDir)" />-->
     <Copy SourceFiles="App.config" DestinationFolder="$(OutDir)" />
   </Target>
   <ItemGroup>
@@ -43,7 +43,7 @@
    <!-- <Reference Include="System.Net.Http.WebRequest" /> -->
   </ItemGroup>
   
-  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.2'">
+  <ItemGroup Condition="'$(TargetFramework)' == 'net5.0'">
     <PackageReference Include="Microsoft.PowerShell.Commands.Utility">
       <Version>6.2.3</Version>
     </PackageReference>
